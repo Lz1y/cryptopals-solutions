@@ -1,4 +1,7 @@
 from Crypto.Util.strxor import strxor_c
+# Tips: 1. 英文字符的hamming distance通常为2~3, 非英文字符的为3~4, 故可以使用分段密文块的平均hamming distance来判断, 取值最小 . 
+#       2. 密文之间进行hamming distance计算 等同于 明文之间进行hamming distance计算: cipher xor cipher === (plaintext xor key) xor (plaintext xor key) === plaintext xor plaintext
+#
 # https://mdickens.me/typing/letter_frequency.html
 # https://www3.nd.edu/~busiforc/handouts/cryptography/letterfrequencies.html
 LETTERS_FREQUENCY = {
